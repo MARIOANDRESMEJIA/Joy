@@ -40,13 +40,16 @@ class CommandControl():
         ##
         if RB ==1:
             self.stop
-            if A == 1 and B != 1:
+            if A == 1 and B != 1 and X != 1:
                 self.mode = 0;
                 print("Modo Manual")
-            if B == 1 and A != 1:
+            if B == 1 and A != 1 and X != 1:
                 self.mode = 1;
                 print("Modo Automatico")
-
+            if X == 1 and A != 1 and B !=1:
+                self.mode = 1;
+                print("Modo Control por Gestos")
+        ##
         if LB==1 and self.mode ==0:
             linear_x=RIGHT_ANALOG_VER
             angular_z=LEFT_ANALOG_HOR
